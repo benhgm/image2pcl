@@ -23,6 +23,13 @@ Clone the [mmsegmentation](https://github.com/open-mmlab/mmsegmentation) reposit
 ```shell
 git clone https://github.com/open-mmlab/mmsegmentation
 ```
+Create a 'models' folder to store your trained models for testing.
+```shell
+mkdir models
+```
+Trained KITTI models can be downloaded from the [monodepth2 repository](https://www.github.com/nianticlabs/monodepth2). This code was tested with the 'mono_640x192' model.
+<br>
+I also provide a custom-trained [nuScenes model](https://drive.google.com/drive/folders/1vV5T4woi8tHVl-UtWrRtQamOWFxxmc9X?usp=sharing) for testing with nuScenes images. This is helpful for multi-view point cloud rendering.
 
 ## Test
 To run a test, it is preferred to use images from a dataset with known camera intrinsics. For this implementation, we use two different datasets:
