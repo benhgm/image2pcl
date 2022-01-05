@@ -25,7 +25,23 @@ git clone https://github.com/open-mmlab/mmsegmentation
 ```
 
 ## Test
-To get a pointcloud for an image, run:
+To run a test, it is preferred to use images from a dataset with known camera intrinsics. For this implementation, we use two different datasets:
+* KITTI Raw for single image testing
+* nuScenes for multi-view images testing
+
+<br>
+To test on KITTI, run the following (replace the <> brackets and contents inside with the correct information):
 ```shell
-python img2pcl.py
+python img2pcl.py \
+--image_path <path to single image file or folder containing single image> \
+--model_path <path to trained KITTI model> \
+--data_type kitti_raw
+```
+To test on nuScenes to view a 360 3D point cloud, run the following (replace the <> brackets and contents inside with the correct information):
+```shell
+python img2pcl.py \
+--image_path <path to folder containing nuScenes multi-cam images> \
+--model_path <path to trained nuScenes model> \
+--data_type nuscenes \
+--nusc_camera_parameters <path to a json file containing nuscenes camera intrinsics and extrinsics>
 ```
